@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <span @click="toggle">
+    <span @click="toggle" class="icon">
       <el-icon-expand v-if="collapse" />
       <el-icon-fold v-else />
     </span>
@@ -23,5 +23,12 @@ const toggle = () => {
   padding: 0 20px;
   display: flex;
   align-items: center;
+
+  .icon {
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
 }
 </style>

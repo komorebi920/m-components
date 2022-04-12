@@ -2,7 +2,7 @@
   <el-menu
     :collapse="collapse"
     default-active="2"
-    class="el-menu-vertical-demo"
+    class="sider"
   >
     <el-menu-item index="1">
       <el-icon-menu />
@@ -26,7 +26,13 @@ const props = defineProps<{
 </script>
 
 <style lang="less" scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
+.sider:not(.el-menu--collapse) {
   width: 200px;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 4px;
+  }
 }
 </style>

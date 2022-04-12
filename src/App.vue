@@ -10,11 +10,6 @@
   padding: 0;
 }
 
-svg {
-  width: 1em;
-  height: 1em;
-}
-
 html,
 body,
 #app,
