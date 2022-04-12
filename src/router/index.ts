@@ -6,7 +6,13 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: Container,
-    children: [{ path: '/', component: Home }],
+    children: [
+      { path: '/', component: Home },
+      {
+        path: '/chooseIcon',
+        component: () => import('../views/ChooseIcon/index.vue'),
+      },
+    ],
   },
 ]
 const router = createRouter({ routes, history: createWebHistory() })
