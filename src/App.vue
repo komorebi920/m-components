@@ -4,4 +4,9 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style lang="less">
+* {
+  margin: 0;
+  padding: 0;
+}
+</style>

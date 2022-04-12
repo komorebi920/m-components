@@ -1,5 +1,7 @@
 <template>
-  <div>首页</div>
+  <div>
+    <el-button>按钮</el-button>
+  </div>
 </template>
 
 <script setup lang="ts"></script>
