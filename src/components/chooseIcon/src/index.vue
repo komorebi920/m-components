@@ -2,20 +2,22 @@
   <el-button @click="handleClick" type="primary">
     <slot></slot>
   </el-button>
-  <el-dialog :title="title" v-model="dialogVisible">
-    <div class="container">
-      <div
-        class="item"
-        v-for="(name, index) in Object.keys(ElIcons)"
-        :key="index"
-      >
-        <div>
-          <component :is="`el-icon-${kebabCase(name)}`"></component>
+  <div class="m-choose-icon-dialog-body-height">
+    <el-dialog :title="title" v-model="dialogVisible">
+      <div class="container">
+        <div
+          class="item"
+          v-for="(name, index) in Object.keys(ElIcons)"
+          :key="index"
+        >
+          <div>
+            <component :is="`el-icon-${kebabCase(name)}`"></component>
+          </div>
+          <div class="text">{{ name }}</div>
         </div>
-        <div class="text">{{ name }}</div>
       </div>
-    </div>
-  </el-dialog>
+    </el-dialog>
+  </div>
 </template>
 
 <script setup lang="ts">
