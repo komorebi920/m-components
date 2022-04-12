@@ -3,8 +3,20 @@ import router from './router'
 import App from './App.vue'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import * as Icons from '@element-plus/icons'
+import { kebabCase } from 'lodash'
 
 const app = createApp(App)
+
+/**
+ * 全局注册图标（牺牲一点性能）
+ * el-icon-xxx
+ */
+for (let key in Icons) {
+  const component = (Icons as any)[key]
+  const name = `el-icon-${kebabCase(component.name)}`
+  app.component(name, component)
+}
 
 app.use(router)
 app.use(ElementPlus)
