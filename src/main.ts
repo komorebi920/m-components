@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElIcons from '@element-plus/icons'
 import { kebabCase } from 'lodash'
+import mUI from './components'
 
 const app = createApp(App)
 
@@ -18,6 +19,4 @@ for (let key in ElIcons) {
   app.component(name, component)
 }
 
-app.use(router)
-app.use(ElementPlus)
-app.mount('#app')
+app.use(router).use(ElementPlus).use(mUI).mount('#app')

@@ -1,9 +1,9 @@
 import { App } from 'vue'
-import chooseArea from './src/index.vue'
+import chooseIcon from './src/index.vue'
 
 // 导出当前组件，实现通过 app.use() 方法按需加载当前组件
 export default {
   install(app: App) {
-    app.component('m-choose-area', chooseArea)
+    app.component('m-choose-icon', chooseIcon)
   },
 }
