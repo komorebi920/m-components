@@ -11,10 +11,40 @@
     <br />
     <div class="flex">
       <div>
-        <m-trend text="营业额" upIconColor="blue" />
+        <m-trend text="营业额（自定义颜色）" upIconColor="blue" />
       </div>
       <div>
-        <m-trend text="销售额" type="down" upIconColor="#123456"  />
+        <m-trend
+          text="销售额（自定义颜色）"
+          type="down"
+          upIconColor="#123456"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="flex">
+      <div>
+        <m-trend>营业额（插槽文字）</m-trend>
+      </div>
+      <div>
+        <m-trend text="营业额（text 文字）" />
+      </div>
+    </div>
+    <br />
+    <div class="flex">
+      <div>
+        <m-trend text="营业额（颜色反转）" reverseColor />
+      </div>
+      <div>
+        <m-trend text="销售额（颜色反转）" reverseColor type="down" />
+      </div>
+      <div>
+        <m-trend
+          text="测试（颜色反转 + 自定义颜色）"
+          type="down"
+          reverseColor
+          downIconColor="blue"
+        />
       </div>
     </div>
   </div>

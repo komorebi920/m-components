@@ -1,14 +1,25 @@
 <template>
   <div class="trend">
-    <div class="text">{{ text }}</div>
+    <div class="text">
+      <slot v-if="slots.default"></slot>
+      <div v-else>{{ text }}</div>
+    </div>
     <div class="icon">
-      <el-icon-arrow-up :style="{ color: upIconColor }" v-if="type === 'up'" />
-      <el-icon-arrow-down :style="{ color: downIconColor }" v-else />
+      <el-icon-arrow-up
+        :style="{ color: !reverseColor ? upIconColor : '#52c41a' }"
+        v-if="type === 'up'"
+      />
+      <el-icon-arrow-down
+        :style="{ color: !reverseColor ? downIconColor : '#f5222d' }"
+        v-else
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useSlots } from 'vue'
+
 const props = defineProps({
   // 标记当前的趋势是上升(up)还是下降(down)
   type: {
@@ -22,6 +33,12 @@ const props = defineProps({
     type: String,
     default: '文字',
   },
+  // 颜色反转，只对默认颜色生效
+  // 如果同时使用了颜色反转和自定义颜色，则自定义颜色不生效
+  reverseColor: {
+    type: Boolean,
+    default: false,
+  },
   // 上升趋势图标颜色
   upIconColor: {
     type: String,
@@ -33,6 +50,8 @@ const props = defineProps({
     default: '#52c41a',
   },
 })
+
+const slots = useSlots()
 </script>
 
 <style lang="less" scoped>
