@@ -1,12 +1,13 @@
 <template>
   <m-notification :value="50">
-    <template #default
-      ><m-list
+    <template #default>
+      <m-list
         :list="list"
         :actions="actions"
         @clickItem="clickItem"
         @clickAction="clickAction"
-    /></template>
+      />
+    </template>
   </m-notification>
 </template>
 

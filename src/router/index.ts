@@ -24,6 +24,10 @@ const routes: RouteRecordRaw[] = [
         path: '/notification',
         component: () => import('../views/Notification/index.vue'),
       },
+      {
+        path: '/menu',
+        component: () => import('../views/Menu/index.vue'),
+      },
     ],
   },
 ]
