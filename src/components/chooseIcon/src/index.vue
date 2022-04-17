@@ -12,7 +12,7 @@
           @click="clickItem(name)"
         >
           <div class="icon">
-            <component :is="`el-icon-${kebabCase(name)}`"></component>
+            <component :is="`el-icon-${kebabCase(name)}`" />
           </div>
           <div class="text">{{ name }}</div>
         </div>
@@ -47,7 +47,7 @@ const handleClick = () => {
 const clickItem = (name: string) => {
   const text = `<el-icon-${kebabCase(name)} />`
   useCopy(text)
-  dialogVisible.value = false 
+  dialogVisible.value = false
 }
 
 // 监听父组件 visible 变化

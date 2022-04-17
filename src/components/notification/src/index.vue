@@ -1,5 +1,10 @@
 <template>
-  <el-popover placement="bottom" :width="300" trigger="click">
+  <el-popover
+    placement="bottom"
+    :width="300"
+    trigger="click"
+    popper-class="notification-popper"
+  >
     <template #default>
       <slot></slot>
     </template>
