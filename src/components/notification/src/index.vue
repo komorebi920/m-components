@@ -1,7 +1,19 @@
 <template>
-  <el-badge style="cursor: pointer;" :value="value" :max="max" :is-dot="isDot">
-    <component :is="`el-icon-${kebabCase(icon)}`" class="icon" />
-  </el-badge>
+  <el-popover placement="bottom" :width="300" trigger="click">
+    <template #default>
+      <slot></slot>
+    </template>
+    <template #reference>
+      <el-badge
+        style="cursor: pointer"
+        :value="value"
+        :max="max"
+        :is-dot="isDot"
+      >
+        <component :is="`el-icon-${kebabCase(icon)}`" class="icon" />
+      </el-badge>
+    </template>
+  </el-popover>
 </template>
 
 <script setup lang="ts">
