@@ -63,8 +63,6 @@ const props = defineProps({
     default: false,
   },
 })
-
-console.log(props.data)
 </script>
 
 <style lang="less" scoped>
