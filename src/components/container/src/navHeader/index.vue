@@ -25,6 +25,14 @@ const toggle = () => {
   align-items: center;
 
   .icon {
+    cursor: pointer;
+    padding: 12px;
+    transition: color linear .3s;
+
+    &:hover {
+      color: #409eff;
+    }
+
     svg {
       width: 1em;
       height: 1em;

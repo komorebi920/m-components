@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <el-button>按钮</el-button>
-    <el-icon-edit />
-  </div>
+  <div>Home</div>
 </template>
 
 <script setup lang="ts"></script>
