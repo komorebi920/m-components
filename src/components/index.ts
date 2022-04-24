@@ -4,6 +4,7 @@ import chooseCity from './chooseCity'
 import chooseDate from './chooseDate'
 import chooseIcon from './chooseIcon'
 import chooseTime from './chooseTime'
+import form from './form'
 import list from './list'
 import menu from './menu'
 import notification from './notification'
@@ -22,6 +23,7 @@ const components = [
   chooseTime,
   chooseDate,
   chooseCity,
+  form,
 ]
 
 export default {
