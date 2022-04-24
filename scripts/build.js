@@ -78,16 +78,7 @@ const createPackageJson = () => {
   "module": "index.es.js",
   "style": "styles.css",
   "types": "index.d.ts",
-  "author": {
-    "name": "Bi8bo-xx",
-    "email": "yxc900920@163.com"
-  },
-  "keywords": [
-    "element-plus",
-    "ts",
-    "vue",
-    "components"
-  ]
+  "author": "${package.author}"
 }  
 `
 
@@ -107,10 +98,7 @@ const createSinglePackageJson = (name) => {
   "module": "index.es.js",
   "style": "styles.css",
   "types": "index.d.ts",
-  "author": {
-    "name": "Bi8bo-xx",
-    "email": "yxc900920@163.com"
-  }
+  "author": "${package.author}"
 }
 `
 
