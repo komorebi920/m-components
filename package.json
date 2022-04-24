@@ -1,14 +1,16 @@
 {
-  "name": "m-components",
-  "private": true,
-  "version": "0.0.0",
+  "name": "bi8bo-xx_element-components",
+  "version": "1.0.0",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "commit": "git cz",
     "build:components": "node ./scripts/build.js",
-    "lib": "rm -rf lib && npm run build:components && cp package.json ./lib/package.json"
+    "lib": "rm -rf lib && npm run build:components"
   },
   "config": {
     "commitizen": {

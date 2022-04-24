@@ -5,6 +5,7 @@ const vueJsx = require('@vitejs/plugin-vue-jsx')
 const fsExtra = require('fs-extra')
 const fs = require('fs')
 const { kebabCase } = require('lodash')
+const package = require('../package.json')
 
 // 入口文件夹
 const entryDir = path.resolve(__dirname, '../src/components')
@@ -37,8 +38,8 @@ const buildAll = async () => {
       rollupOptions,
       lib: {
         entry: path.resolve(entryDir, 'index.ts'),
-        name: 'mooc-element-components',
-        fileName: 'mooc-element-components',
+        name: 'index',
+        fileName: 'index',
         formats: ['es', 'umd'],
       },
       outDir,
@@ -67,15 +68,49 @@ const buildSingle = async (name) => {
 }
 
 /**
+ * 全量打包生成 package.json
+ */
+const createPackageJson = () => {
+  const fileStr = `{
+  "name": "${package.name}",
+  "version": "${package.version}",
+  "main": "index.umd.js",
+  "module": "index.es.js",
+  "style": "styles.css",
+  "types": "index.d.ts",
+  "author": {
+    "name": "Bi8bo-xx",
+    "email": "yxc900920@163.com"
+  },
+  "keywords": [
+    "element-plus",
+    "ts",
+    "vue",
+    "components"
+  ]
+}  
+`
+
+  // 输出
+  fsExtra.outputFile(path.resolve(outDir, 'package.json'), fileStr, 'utf-8')
+}
+
+/**
  * 每个组件生成 package.json
  * @param {string} name 组件名称
  */
-const createPackageJson = (name) => {
+const createSinglePackageJson = (name) => {
   const fileStr = `{
-  "name": "${kebabCase(name)}",
+  "name": "${package.name.split('_')[0]}_${kebabCase(name)}",
+  "version": "${package.version}",
   "main": "index.umd.js",
   "module": "index.es.js",
-  "style": "styles.css"
+  "style": "styles.css",
+  "types": "index.d.ts",
+  "author": {
+    "name": "Bi8bo-xx",
+    "email": "yxc900920@163.com"
+  }
 }
 `
 
@@ -87,9 +122,30 @@ const createPackageJson = (name) => {
   )
 }
 
+// 生成 index.d.ts
+const createDTs = (name) => {
+  const fileStr = `import { App } from 'vue'
+
+declare const _default: {
+  install(app: App): void
+};
+  
+export default _default;  
+`
+
+  // 输出
+  fsExtra.outputFile(
+    path.resolve(outDir, name ? `${name}/index.d.ts` : 'index.d.ts'),
+    fileStr,
+    'utf-8'
+  )
+}
+
 // 打包成库
 const buildLib = async () => {
   await buildAll()
+  createPackageJson()
+  createDTs()
 
   // 获取组件名称组成的数组
   const components = fs.readdirSync(entryDir).filter((name) => {
@@ -102,7 +158,8 @@ const buildLib = async () => {
   // 循环构建
   for (const name of components) {
     await buildSingle(name)
-    createPackageJson(name)
+    createSinglePackageJson(name)
+    createDTs(name)
   }
 }
 
