@@ -1,7 +1,12 @@
 import { defineComponent, PropType, useAttrs } from 'vue'
 import * as Icons from '@element-plus/icons'
 import { MenuItem } from './types'
-import './styles/index.less'
+
+const iconStyle = {
+  marginRight: 4,
+  width: '1em',
+  height: '1em',
+}
 
 const component = defineComponent({
   props: {
@@ -58,7 +63,7 @@ const component = defineComponent({
             title: () => {
               return (
                 <>
-                  <item.i />
+                  <item.i style={iconStyle} />
                   <span>{item[props.name]}</span>
                 </>
               )
@@ -77,7 +82,7 @@ const component = defineComponent({
           // 正常渲染普通菜单
           return (
             <el-menu-item index={item[props.index]}>
-              <item.i />
+              <item.i style={iconStyle} />
               <span>{item[props.name]}</span>
             </el-menu-item>
           )
