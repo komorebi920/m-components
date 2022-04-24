@@ -1,6 +1,6 @@
 {
   "name": "chuanqiong_element-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./lib/index.umd.js",
   "module": "./lib/index.es.js",
   "style": "./lib/styles.css",
