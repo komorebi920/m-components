@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Container from '../components/container/src/index.vue'
+import Container from '../container/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: Container,
     children: [
-      { path: '/', component: import('../views/Home.vue') },
+      { path: '/', component: () => import('../views/Home.vue') },
       {
         path: '/chooseIcon',
         component: () => import('../views/ChooseIcon/index.vue'),

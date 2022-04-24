@@ -4,7 +4,7 @@
     router
     :defaultActive="$route.path"
     :collapse="collapse"
-  ></m-menu>
+  />
 </template>
 
 <script setup lang="ts">

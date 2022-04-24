@@ -10,6 +10,8 @@ import menu from './menu'
 import notification from './notification'
 import progress from './progress'
 import trend from './trend'
+import '../styles/base.less'
+import '../styles/ui.less'
 
 // 导出所有组件，实现通过 app.use() 方法加载所有组件
 const components = [

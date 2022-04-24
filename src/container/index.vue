@@ -16,8 +16,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import NavSider from './navSider/index.vue'
-import NavHeader from './navHeader/index.vue'
+import NavSider from './navSider.vue'
+import NavHeader from './navHeader.vue'
 
 const isCollapse = ref(false)
 </script>

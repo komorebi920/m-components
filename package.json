@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "commit": "git cz"
+    "commit": "git cz",
+    "build:components": "node ./scripts/build.js",
+    "lib": "rm -rf lib && npm run build:components && cp package.json ./lib/package.json"
   },
   "config": {
     "commitizen": {
@@ -25,6 +27,7 @@
     "@vitejs/plugin-vue": "^2.3.0",
     "@vitejs/plugin-vue-jsx": "^1.3.10",
     "cz-conventional-changelog": "^3.3.0",
+    "fs-extra": "^10.1.0",
     "less": "^4.1.2",
     "typescript": "^4.5.4",
     "vite": "^2.9.1",
