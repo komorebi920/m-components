@@ -1,6 +1,7 @@
 import { App } from 'vue'
 import chooseArea from './chooseArea'
 import chooseIcon from './chooseIcon'
+import chooseTime from './chooseTime'
 import list from './list'
 import menu from './menu'
 import notification from './notification'
@@ -16,6 +17,7 @@ const components = [
   notification,
   trend,
   progress,
+  chooseTime,
 ]
 
 export default {
