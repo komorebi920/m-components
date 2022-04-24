@@ -33,7 +33,10 @@ const props = defineProps<{
   // 控制弹出框的显示与隐藏
   visible: boolean
 }>()
+
+// 分发事件
 const emits = defineEmits(['update:visible'])
+
 // 拷贝一份父组件传递过来的 visible
 const dialogVisible = ref<boolean>(props.visible)
 

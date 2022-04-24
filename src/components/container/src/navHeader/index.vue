@@ -11,7 +11,10 @@
 const props = defineProps<{
   collapse: boolean
 }>()
+
+// 分发事件
 const emits = defineEmits(['update:collapse'])
+
 const toggle = () => {
   emits('update:collapse', !props.collapse)
 }
@@ -27,7 +30,7 @@ const toggle = () => {
   .icon {
     cursor: pointer;
     padding: 12px;
-    transition: color linear .3s;
+    transition: color linear 0.3s;
 
     &:hover {
       color: #409eff;

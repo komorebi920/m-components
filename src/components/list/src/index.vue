@@ -61,6 +61,7 @@ const props = defineProps({
   },
 })
 
+// 分发事件
 const emits = defineEmits(['clickItem', 'clickAction'])
 
 const clickItem = (item: ListItem, index: number) => {

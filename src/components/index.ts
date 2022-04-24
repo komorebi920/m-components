@@ -1,5 +1,6 @@
 import { App } from 'vue'
 import chooseArea from './chooseArea'
+import chooseCity from './chooseCity'
 import chooseDate from './chooseDate'
 import chooseIcon from './chooseIcon'
 import chooseTime from './chooseTime'
@@ -20,6 +21,7 @@ const components = [
   progress,
   chooseTime,
   chooseDate,
+  chooseCity,
 ]
 
 export default {

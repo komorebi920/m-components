@@ -49,6 +49,8 @@ const area = ref<string>('')
 const areas = ref(allAreas)
 const selectCity = ref<AreaItem[]>([])
 const selectArea = ref<AreaItem[]>([])
+
+// 分发事件
 const emits = defineEmits(['change'])
 
 watch(

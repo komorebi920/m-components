@@ -80,6 +80,7 @@ const endTime = ref<string>('')
 // 禁用结束时间
 const endTimeDisabled = ref<boolean>(true)
 
+// 分发事件
 const emits = defineEmits(['startChange', 'endChange'])
 
 // 监听开始时间变化
