@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
-    "chuanqiong_element-components": "^1.0.0",
     "element-plus": "^2.1.9",
     "lodash": "^4.17.21",
     "vue": "^3.2.25",
